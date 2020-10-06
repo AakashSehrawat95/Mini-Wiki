@@ -1,0 +1,17 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Wiki: {{title}}
+{% endblock %}
+
+{% block body %}
+    {% if messages %}
+        {% for message in messages %}
+            <li class="{{ message.tags }}">{{ message }}</li>
+        {% endfor %}
+    {% endif %}
+
+    {{html|safe}}
+    <a href = "{% url 'editpage' title=title %}"> Edit Content</a>
+
+{% endblock %}

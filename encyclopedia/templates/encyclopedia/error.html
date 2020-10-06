@@ -1,0 +1,15 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Wiki: Error
+{% endblock %}
+
+{% block body %}
+
+    {% if messages %}
+        {% for message in messages %}
+            <h1 class="{{ message.tags }}">{{ message }}</h1>
+        {% endfor %}
+    {% endif %}
+
+{% endblock %}
